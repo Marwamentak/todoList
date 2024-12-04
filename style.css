@@ -1,0 +1,111 @@
+* { /* Sélecteur universel pour cibler tous les éléments */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les espacements internes par défaut */
+  font-family: 'Poppins', sans-serif; /* Applique la police 'Poppins' à tous les éléments */
+  box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions de l'élément */
+}
+
+.container { /* Conteneur principal de l'application */
+  width: 100%; /* Occupe toute la largeur de l'écran */
+  min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
+  background: linear-gradient(135deg, #153677, #4e085f); /* Fond avec dégradé en diagonale */
+  padding: 10px; /* Espace de 10px autour du conteneur */
+}
+
+.todo-app { /* Conteneur de l'application To-Do */
+  width: 100%; /* Largeur de 100% */
+  max-width: 540px; /* Largeur maximale de 540px pour limiter la taille */
+  background: #fff; /* Fond blanc */
+  margin: 100px auto 20px; /* Centre l'application avec un espace de 100px en haut et 20px en bas */
+  padding: 40px 30px 70px; /* Ajoute des espacements internes : 40px en haut, 30px sur les côtés, 70px en bas */
+  border-radius: 10px; /* Arrondit les coins du conteneur */
+}
+
+.todo-app h2 { /* Style pour le titre h2 dans l'application To-Do */
+  color: #002765; /* Couleur du texte bleu foncé */
+  display: flex; /* Active la disposition en flex */
+  align-items: center; /* Aligne verticalement les éléments au centre */
+  margin-bottom: 20px; /* Espace en bas de 20px */
+}
+
+.todo-app h2 img { /* Style pour les images dans le titre h2 */
+  width: 30px; /* Définit la largeur de l'image à 30px */
+  margin-left: 10px; /* Espace de 10px à gauche de l'image */
+}
+
+.row { /* Style pour la rangée contenant l'entrée de texte et le bouton */
+  display: flex; /* Active la disposition en flex */
+  align-items: center; /* Aligne verticalement les éléments au centre */
+  justify-content: space-between; /* Espace les éléments de manière égale */
+  background: #edeef0; /* Fond gris clair */
+  border-radius: 30px; /* Arrondit les coins */
+  padding-left: 20px; /* Espace de 20px à gauche */
+  margin-bottom: 25px; /* Espace en bas de 25px */
+}
+
+input { /* Style pour l'élément de saisie de texte */
+  flex: 1; /* Occupe tout l'espace disponible */
+  border: none; /* Supprime la bordure */
+  outline: none; /* Supprime le contour lorsque l'élément est sélectionné */
+  background: transparent; /* Fond transparent */
+  padding: 10px; /* Espacement interne de 10px */
+}
+
+button { /* Style pour le bouton */
+  border: none; /* Supprime la bordure */
+  outline: none; /* Supprime le contour lors de la sélection */
+  padding: 16px 50px; /* Espacements internes : 16px en haut et en bas, 50px sur les côtés */
+  background: #ff5945; /* Fond orange vif */
+  color: #fff; /* Couleur du texte blanc */
+  font-size: 16px; /* Taille du texte de 16px */
+  cursor: pointer; /* Change le curseur en pointeur */
+  border-radius: 40px; /* Arrondit les coins du bouton */
+}
+
+ul li { /* Style pour chaque élément de la liste */
+  list-style: none; /* Supprime les puces de la liste */
+  font-size: 17px; /* Définit la taille du texte */
+  padding: 12px 8px 12px 50px; /* Espacements internes : 12px en haut et en bas, 8px à droite, 50px à gauche */
+  user-select: none; /* Empêche la sélection de l'élément */
+  cursor: pointer; /* Change le curseur en pointeur */
+  position: relative; /* Définit une position relative pour l'élément */
+}
+
+ul li::before { /* Style pour le pseudo-élément avant chaque élément de la liste */
+  content: ''; /* Pseudo-élément vide */
+  position: absolute; /* Position absolue par rapport à l'élément parent */
+  height: 28px; /* Hauteur de 28px */
+  width: 28px; /* Largeur de 28px */
+  border-radius: 50%; /* Forme ronde */
+  background-image: url(images/unchecked.png); /* Image de fond pour l'état non coché */
+  background-size: cover; /* Couvre toute la zone */
+  background-position: center; /* Centre l'image */
+  top: 12px; /* Décale le pseudo-élément de 12px vers le bas */
+  left: 0px; /* Place le pseudo-élément à gauche */
+}
+
+ul li.checked { /* Style pour les éléments cochés de la liste */
+  color: #555; /* Couleur du texte gris */
+  text-decoration: line-through; /* Barre le texte */
+}
+
+ul li.checked::before { /* Style pour le pseudo-élément des éléments cochés */
+  background-image: url(images/checked.png); /* Image de fond pour l'état coché */
+}
+
+ul li span { /* Style pour le bouton de suppression */
+  position: absolute; /* Position absolue par rapport à l'élément parent */
+  right: 0; /* Place le bouton complètement à droite */
+  top: 5px; /* Décale le bouton de 5px vers le bas */
+  width: 40px; /* Largeur de 40px */
+  height: 40px; /* Hauteur de 40px */
+  font-size: 22px; /* Taille du texte */
+  color: #555; /* Couleur du texte gris */
+  line-height: 40px; /* Centre verticalement le texte */
+  text-align: center; /* Centre horizontalement le texte */
+  border-radius: 50%; /* Forme ronde */
+}
+
+ul li span:hover { /* Style du bouton de suppression au survol */
+  background: #edeef0; /* Change le fond en gris clair */
+}
